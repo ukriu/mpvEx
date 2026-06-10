@@ -453,7 +453,7 @@ class FileSystemBrowserViewModel(
             playbackMap[video.id] = progressValue
           }
 
-          val isWatched = progressValue >= (browserPreferences.watchedThreshold.get() / 100f) || playbackState.hasBeenWatched
+          val isWatched = playbackState != null
           if (isWatched) watchedIds.add(video.id)
         }
       }
